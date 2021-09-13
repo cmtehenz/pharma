@@ -10,6 +10,14 @@ npm run dev
 yarn dev
 ```
 
+Deve conter o título do projeto
+Uma descrição sobre o projeto em frase
+Deve conter uma lista com linguagem, framework e/ou tecnologias usadas
+Como instalar e usar o projeto (instruções)
+Não esqueça o .gitignore
+
+Se está usando github pessoal, referencie que é um challenge by coodesh
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.

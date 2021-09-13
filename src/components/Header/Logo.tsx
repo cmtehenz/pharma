@@ -8,9 +8,9 @@ export default function Logo() {
       letterSpacing="tight"
       w="64"
     >
-      pharma
+      Pharma
       <Text as="span" ml="1" color="cyan.600">
-        .
+        Inc
       </Text>
     </Text>
   );
