@@ -9,7 +9,7 @@ import {
   Modal as ChakraModal,
   ModalOverlay,
   ModalContent,
-  ModalHeader,
+  Stack,
   Image,
   ModalBody,
   useDisclosure,
@@ -64,7 +64,7 @@ export default function Home() {
               <Text>Falha ao obter dados dos usuários</Text>
             </Flex>
           ): (
-            <Table colorScheme="teal">
+            <Table colorScheme="gray">
               <Thead>
                 <Tr>
                   <Th  color="gray.800" >
@@ -110,24 +110,51 @@ export default function Home() {
               <ModalContent>
                 <ModalCloseButton />
                 <ModalBody>
-                  <Image
-                    borderRadius="full"
-                    boxSize="150px"
-                    src={user?.pictureUrl}
-                    alt={user?.name}
-                  />
-                  <Text>{user?.name}</Text>
-                  <Text>{user?.id}</Text>
-                  <Text>{user?.email}</Text>
-                  <Text>{user?.gender}</Text>
-                  <Text>{user?.birthday}</Text>
-                  <Text>{user?.phone}</Text>
-                  <Text>{user?.nationality}</Text>
-                  <Text>{user?.street}</Text>
-                  <Text>{user?.city}</Text>
-                  <Text>{user?.state}</Text>
-                  <Text>{user?.country}</Text>
-                  <Text>{user?.postcode}</Text>
+                  <Box 
+                    justify="center"
+                    align="center"
+                    marginBottom="4"
+                  >
+                    <Image
+                      position="relative"
+                      borderRadius="full"
+                      boxSize="150px"
+                      src={user?.pictureUrl}
+                      alt={user?.name}
+                    />
+                    <Text
+                      fontSize="3xl"
+                    >
+                      {user?.name}
+                    </Text>
+                    <Text as="span" color="gray.500">{user?.email}</Text>
+                  </Box>
+                  <Stack 
+                    direction="row"
+                    spacing="4"
+                  > 
+                    <Text >Gender: {user?.gender}</Text>
+                    <Text >Birthday: {user?.birthday}</Text>
+                  </Stack>
+                  <Stack 
+                    direction="row"
+                    spacing="4"
+                  >
+                    <Text>Phone: {user?.phone}</Text>
+                    <Text>Nationality: {user?.nationality} </Text>
+                  </Stack>
+                  
+                  <Text>Street: {user?.street}</Text>
+                  <Text>City: {user?.city}</Text>
+                  
+                  <Stack 
+                    direction="row"
+                    spacing="4"
+                  >
+                    <Text>State: {user?.state}</Text>
+                    <Text>Country: {user?.country}</Text>
+                  </Stack>
+                  <Text>Postcode: {user?.postcode}</Text>
                 </ModalBody>
               </ModalContent>
             </ChakraModal>
