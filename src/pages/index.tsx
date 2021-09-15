@@ -10,25 +10,42 @@ import {
   ModalOverlay,
   ModalContent,
   ModalHeader,
-  ModalFooter,
+  Image,
   ModalBody,
   useDisclosure,
   ModalCloseButton,
 } from '@chakra-ui/react';
+import { useState } from 'react'
 import { useUsers } from "../services/hooks/useUsers";
 
 import { RiPencilLine } from "react-icons/ri";
 
 import { Header } from '../components/Header';
-import { on } from 'stream';
+
+type User = {
+  id: string,
+  name: string;
+  gender: string;
+  birthday: string;
+  pictureUrl: string;
+  email: string;
+  phone: string;
+  nationality: string;
+  street: string,
+  city: string,
+  state: string,
+  country: string,
+  postcode: number,
+};
 
 export default function Home() {
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  const [user, setUser ] = useState<User>();
+  const { isOpen, onToggle, onClose } = useDisclosure()
   const { data, isLoading, isFetching, error } = useUsers(2);
 
-  const handleOpenModal = (user) => {
-    console.log(user);
-    onOpen();
+  const handleOpenModal = (data: User) => {
+    setUser(data);
+    onToggle();
   }
 
   return (
@@ -87,14 +104,30 @@ export default function Home() {
 
           )}
           <>
+            
             <ChakraModal motionPreset="slideInBottom" isOpen={isOpen} onClose={onClose}>
               <ModalOverlay />
               <ModalContent>
-                <ModalHeader>Modal Title</ModalHeader>
                 <ModalCloseButton />
                 <ModalBody>
-                  <Text>Teste polenta</Text>
-
+                  <Image
+                    borderRadius="full"
+                    boxSize="150px"
+                    src={user?.pictureUrl}
+                    alt={user?.name}
+                  />
+                  <Text>{user?.name}</Text>
+                  <Text>{user?.id}</Text>
+                  <Text>{user?.email}</Text>
+                  <Text>{user?.gender}</Text>
+                  <Text>{user?.birthday}</Text>
+                  <Text>{user?.phone}</Text>
+                  <Text>{user?.nationality}</Text>
+                  <Text>{user?.street}</Text>
+                  <Text>{user?.city}</Text>
+                  <Text>{user?.state}</Text>
+                  <Text>{user?.country}</Text>
+                  <Text>{user?.postcode}</Text>
                 </ModalBody>
               </ModalContent>
             </ChakraModal>

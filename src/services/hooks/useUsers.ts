@@ -6,6 +6,15 @@ type User = {
   name: string;
   gender: string;
   birthday: string;
+  pictureUrl: string;
+  email: string;
+  phone: string;
+  nationality: string;
+  street: string,
+  city: string,
+  state: string,
+  country: string,
+  postcode: number,
 }
 
 type GetUsersResponse = {
@@ -35,7 +44,16 @@ export async function getUsers(page: number): Promise<GetUsersResponse>{
         day: '2-digit',
         month: '2-digit',
         year: 'numeric',
-      })
+      }),
+      pictureUrl: user.picture.medium,
+      email: user.email,
+      phone: user.phone,
+      nationality: user.nat,
+      street: user.location.street.name + ", " + user.location.street.number,
+      city: user.location.city,
+      state: user.location.state,
+      country: user.location.country,
+      postcode: user.location.postcode,
     } 
   });
 
