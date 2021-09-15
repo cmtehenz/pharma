@@ -1,8 +1,10 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Front-End Challenge 🏅 2021
 
-## Getting Started
+Este é um desafio para testar seus conhecimentos de Front-end;
+O objetivo é avaliar a sua forma de estruturação e autonomia em decisões para construir algo escalável utilizando um framework moderno javascript.
 
-First, run the development server:
+
+
 
 ```bash
 npm run dev
