@@ -6,7 +6,7 @@ O objetivo é avaliar a sua forma de estruturação e autonomia em decisões par
 
 ## Tecnologias e bibliotecas
  
- - NextJS[http://nextjs.org]
+ - [NextJS](http://nextjs.org)
  - Chakra-ui
  - axios
  - typescript
