@@ -1,10 +1,15 @@
-## Front-End Challenge 🏅 2021
+# Front-End Challenge 🏅 2021
 
 Este é um desafio para testar seus conhecimentos de Front-end;
 O objetivo é avaliar a sua forma de estruturação e autonomia em decisões para construir algo escalável utilizando um framework moderno javascript.
 
 
-
+## Tecnologias e bibliotecas
+ 
+ - NextJS[http://nextjs.org]
+ - Chakra-ui
+ - axios
+ - typescript
 
 ```bash
 npm run dev
